@@ -1,0 +1,22 @@
+<%-include ('partials/header') %> 
+
+<p class="type_title">Cliquez sur un type pour voir tous les Pokémon de ce type</p>
+
+<div class="container_type">
+
+<% if(locals.types){ %>
+
+    <% for (const type of types) { %> 
+
+        <a href="/filter/type?type=<%=type.name%>" class="type" style="background-color:#<%=type.color%>">
+            <%=type.name%>
+        </a>
+
+    <% } %>
+
+<% } %>
+
+<!--/container-->
+</div>
+
+<%-include ('partials/footer') %> 

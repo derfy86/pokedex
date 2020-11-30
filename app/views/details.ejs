@@ -1,0 +1,87 @@
+<%-include ('partials/header') %>
+
+    <% if(locals.pokemon && locals.types){ %>
+
+        <h1 class="title_details">Détails de <%=pokemon.nom%></h1>
+        <div class="content">
+            <div class="box--image">
+                <img class="image_details" src="/img/<%=pokemon.numero%>.png" alt="<%=pokemon.nom%>">
+            </div>
+        <article class="article specification">
+            <div class="article_details">
+                <h2 class="title_footer_article">#<%=pokemon.numero%></h2>
+                <h2 class="title_footer_article"><%=pokemon.nom%></h2>
+            </div>
+            <% if(types.length > 1){ %>
+                <% for (const type of types) { %> 
+                    <span class="type" style="background-color:#<%=type.color%>;" ><%=type.name%></span>
+                <% } %>
+            <% }else{ %>
+                    <span class="type" style="background-color:#<%=types.color%>;" ><%=types.name%></span>
+            <% } %>
+            <p class="statistiques">Statistiques</p>
+            <div class="content_details">
+                <div class="stats">
+                    <table class="tab">
+                        <tr>
+                            <td class="tab_inside">PV</td>
+                            <td class="tab_inside"><%=pokemon.pv%></td>
+                        </tr>
+                        <tr>
+                            <td class="tab_inside">Attaque</td>
+                            <td class="tab_inside"><%=pokemon.attaque%></td>
+                        </tr>
+                        <tr>
+                            <td class="tab_inside">Défense</td>
+                            <td class="tab_inside"><%=pokemon.defense%></td>
+                        </tr>
+                        <tr>
+                            <td class="tab_inside">Attaque Spé.</td>
+                            <td class="tab_inside"><%=pokemon.attaque_spe%></td>
+                        </tr>
+                        <tr>
+                            <td class="tab_inside">Défense spé.</td>
+                            <td class="tab_inside"><%=pokemon.defense_spe%></td>
+                        </tr>
+                        <tr>
+                            <td class="tab_inside">Vitesse</td>
+                            <td class="tab_inside"><%=pokemon.vitesse%></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="barre_progress">
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.pv%>%"
+                            aria-valuenow="<%=pokemon.pv%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.attaque%>%"
+                            aria-valuenow=" <%=pokemon.attaque%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.defense%>%"
+                            aria-valuenow="<%=pokemon.defense%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.attaque_spe%>%"
+                            aria-valuenow="<%=pokemon.attaque_spe%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.defense_spe%>%"
+                            aria-valuenow="<%=pokemon.defense_spe%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress barre">
+                        <div class="progress-bar barre_white" role="progressbar" style="width: <%=pokemon.vitesse%>%"
+                            aria-valuenow="<%=pokemon.vitesse%>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    <% } %>
+
+    <a href="/" class="title_details soft_font">Revenir à la liste</a>
+    <!--/container-->
+</div>
+
+<%-include ('partials/footer') %>

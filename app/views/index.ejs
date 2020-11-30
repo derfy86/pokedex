@@ -1,0 +1,22 @@
+<%-include ('partials/header') %> 
+
+<div class="content">
+
+    <% for (const pokemon of pokemons) { %> 
+
+        <article class="article">
+            <a href="/details/<%=pokemon.id%>" class="title_footer_article">
+                <img class="image" src="/img/<%=pokemon.numero%>.png" alt="<%=pokemon.nom%>">
+            </a>
+            <div class="footer_article">
+                <a href="/details/<%=pokemon.id%>" class="title_footer_article"><%=pokemon.numero%></a>
+                <a href="/details/<%=pokemon.id%>" class="title_footer_article"><%=pokemon.nom%></a>
+            </div>
+        </article>
+
+    <% } %>
+
+<!--/container-->
+</div>
+
+<%-include ('partials/footer') %> 
