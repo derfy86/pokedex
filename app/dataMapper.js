@@ -25,7 +25,6 @@ const dataMapper = {
   },
 
   getFilterPokemon: function (type, callback) {
-    console.log(`type`, type)
     const query = {
       text: `SELECT p.*, t.name FROM pokemon AS p LEFT JOIN pokemon_type AS pT ON p.numero = pT.pokemon_numero LEFT JOIN type AS t ON pT.type_id = t.id WHERE t.name=$1`,
       values: [type]
